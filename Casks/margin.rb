@@ -13,16 +13,16 @@ cask "margin" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Margin.app"
 
-  # The build is not signed yet: clear the quarantine flag so Gatekeeper opens it.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Margin.app"],
-                   sudo: false
-  end
+  caveats <<~EOS
+    Margin is not code-signed yet. Install with --no-quarantine so Gatekeeper opens it:
+      brew install --cask --no-quarantine margin
+    or right-click Margin.app and choose Open the first time.
+    The bundled coach needs Node.js and Claude Code logged in (run `claude`, then /login).
+  EOS
 
   zap trash: [
     "~/Library/Application Support/app.margin.desktop",
