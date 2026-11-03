@@ -17,16 +17,16 @@ cask "margin" do
 
   app "Margin.app"
 
+  zap trash: [
+    "~/Library/Application Support/app.margin.desktop",
+    "~/Library/Caches/app.margin.desktop",
+    "~/Library/WebKit/app.margin.desktop",
+  ]
+
   caveats <<~EOS
     Margin is not code-signed yet. Install with --no-quarantine so Gatekeeper opens it:
       brew install --cask --no-quarantine margin
     or right-click Margin.app and choose Open the first time.
     The bundled coach needs Node.js and Claude Code logged in (run `claude`, then /login).
   EOS
-
-  zap trash: [
-    "~/Library/Application Support/app.margin.desktop",
-    "~/Library/Caches/app.margin.desktop",
-    "~/Library/WebKit/app.margin.desktop",
-  ]
 end
