@@ -24,9 +24,9 @@ cask "margin" do
   ]
 
   caveats <<~EOS
-    Margin is not code-signed yet. Install with --no-quarantine so Gatekeeper opens it:
-      brew install --cask --no-quarantine margin
-    or right-click Margin.app and choose Open the first time.
+    Margin is not code-signed yet, so macOS warns on first launch.
+    Right-click Margin.app in /Applications and choose Open (once), or run:
+      xattr -dr com.apple.quarantine /Applications/Margin.app
     The bundled coach needs Node.js and Claude Code logged in (run `claude`, then /login).
   EOS
 end
