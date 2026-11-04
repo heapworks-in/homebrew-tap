@@ -5,7 +5,7 @@ cask "second-brain" do
   url "https://github.com/heapworks-in/second-brain/releases/download/desktop-v#{version}/Second.Brain_#{version}_aarch64.dmg"
   name "Second Brain"
   desc "Local-first capture, search, planning and meeting recorder"
-  homepage "https://github.com/heapworks-in/second-brain"
+  homepage "https://heapworks-in.github.io/second-brain/"
 
   livecheck do
     url :url
