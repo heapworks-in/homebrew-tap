@@ -1,6 +1,6 @@
 cask "margin" do
-  version "0.11.0"
-  sha256 "62c5ec91ebcf9147f73eb2e0f22ae6cd77e0ed417b37e0dbcc749fcbf540e865"
+  version "0.12.0"
+  sha256 "6cc574a9a3eeafe463e83d3ed98fbb8c34b320a4175b400f17eb3e57944b5189"
 
   url "https://github.com/heapworks-in/margin/releases/download/v#{version}/Margin_#{version}_aarch64.dmg"
   name "Margin"
