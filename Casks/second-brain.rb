@@ -1,6 +1,6 @@
 cask "second-brain" do
-  version "0.7.0"
-  sha256 "9e4e2dd1bef5cb004ff0942a62b2b272c72740ab77d1d374ac8e37d49a4de30e"
+  version "0.8.0"
+  sha256 "0279947d2c185f31e39880d3ed344d86fb530b14cf04209d8bc7b09de6b02d69"
 
   url "https://github.com/heapworks-in/second-brain/releases/download/desktop-v#{version}/Second.Brain_#{version}_aarch64.dmg"
   name "Second Brain"
