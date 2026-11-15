@@ -1,6 +1,6 @@
 cask "second-brain" do
-  version "0.6.1"
-  sha256 "bb2dc183dfcf4d3d19fefa8f3dad5bc1687f76445843b4ec1f4e25a7310b6022"
+  version "0.7.0"
+  sha256 "9e4e2dd1bef5cb004ff0942a62b2b272c72740ab77d1d374ac8e37d49a4de30e"
 
   url "https://github.com/heapworks-in/second-brain/releases/download/desktop-v#{version}/Second.Brain_#{version}_aarch64.dmg"
   name "Second Brain"
@@ -48,5 +48,16 @@ cask "second-brain" do
 
     Recording meetings needs Microphone and Screen Recording permission, and auto-record
     needs Calendar. macOS asks the first time each is used.
+
+    Reading Slack and capturing window titles need Accessibility, which macOS cannot ask for
+    on a helper's behalf. Add this file by hand in System Settings > Privacy & Security >
+    Accessibility:
+
+      ~/Library/Application Support/second-brain/bin/sb-activity
+
+    ~/Library is hidden in Finder, so press Cmd-Shift-G in the file dialog and paste the path.
+    An update replaces that binary and macOS pins the grant to the exact one it was given, so
+    after upgrading, remove the sb-activity entry and add it again -- toggling it off and on
+    reuses the stale entry. Settings > Slack shows whether the grant is live.
   EOS
 end
